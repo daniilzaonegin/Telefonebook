@@ -16,6 +16,8 @@ jobs:
     defaults:
       run:
         working-directory: 'src/frontend'
+    env:
+      working-directory: 'src/frontend'
     strategy:
       matrix:
         node-version: [18.x]
@@ -29,4 +31,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'      
     - run: npm ci
+      working-directory: ${{env.working-directory}}
     - run: npm run build --if-present
+      working-directory: ${{env.working-directory}}
