@@ -1,3 +1,7 @@
+[![Backend_CI](https://github.com/daniilzaonegin/Telefonebook/actions/workflows/build_backend.yml/badge.svg)](https://github.com/daniilzaonegin/Telefonebook/actions/workflows/build_backend.yml)
+
+[![Frontend_CI](https://github.com/daniilzaonegin/Telefonebook/actions/workflows/build_frontend.yml/badge.svg)](https://github.com/daniilzaonegin/Telefonebook/actions/workflows/build_frontend.yml)
+
 # Telephone Book Project
 
 This is a telephone book app, written on Vue.js & ASP.NET Core.
