@@ -16,13 +16,8 @@ if (!certificateName) {
 
 const certFilePath = path.join(baseFolder, `${certificateName}.pem`);
 const keyFilePath = path.join(baseFolder, `${certificateName}.key`);
-
-module.exports = {
+const config = {
     devServer: {
-        https: {
-            key: fs.readFileSync(keyFilePath),
-            cert: fs.readFileSync(certFilePath),
-        },
         proxy: {
             '^/weatherforecast': {
                 target: 'https://localhost:7198/'
@@ -34,3 +29,14 @@ module.exports = {
         devtool: "source-map"
     }
 }
+
+if(fs.existsSync(certFilePath) && fs.existsSync(keyFilePath)) {    
+    config.devServer.https = {
+        key: fs.readFileSync(keyFilePath),
+        cert: fs.readFileSync(certFilePath),
+    };
+}
+
+module.exports = {
+    ...config
+};
