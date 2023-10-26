@@ -21,6 +21,6 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Restore backend dependencies
-      run: dotnet restore
+      run: dotnet restore src/telefone-book-api/telefone-book-api.csproj
     - name: Build Backend
       run: dotnet build src/telefone-book-api/telefone-book-api.csproj --no-restore
