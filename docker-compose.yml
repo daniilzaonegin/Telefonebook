@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  telefone-book-api:
+    image: ${DOCKER_REGISTRY-}telefonebookapi
+    build:
+      context: .
+      dockerfile: src/telefone-book-api/Dockerfile
+  # telefone-book-frontend:
+  #   image: ${DOCKER_REGISTRY-}telefonebookfront
+  #   build:
+  #     context: .
+  #     dockerfile: src/frontend/Dockerfile
+  #   ports:
+  #     - "80:3000"

@@ -14,13 +14,14 @@ if (!certificateName) {
     process.exit(-1);
 }
 
+
 const certFilePath = path.join(baseFolder, `${certificateName}.pem`);
 const keyFilePath = path.join(baseFolder, `${certificateName}.key`);
 const config = {
     devServer: {
         proxy: {
             '^/weatherforecast': {
-                target: 'https://localhost:7198/'
+                target: process.env.VUE_API_SERVER ?? 'https://localhost:7198/'
             }
         },
         port: 5002

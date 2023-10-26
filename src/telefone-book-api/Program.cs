@@ -24,6 +24,8 @@ builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddDbContext<TelephoneBookDbContext>(
     opt => opt.UseSqlite(serviceConfiguration.GetConnectionString(nameof(TelephoneBookDbContext))));
 
+builder.Services.AddHealthChecks();
+
 // Configure identity
 builder.Services.AddIdentityCore<TelephoneBookUser>()
                 .AddEntityFrameworkStores<TelephoneBookDbContext>();
@@ -45,6 +47,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.MapHealthChecks("/healthz");
 app.MapControllers().RequireAuthorization();
 
 app.Run();

@@ -6,6 +6,9 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<RootNamespace>telefone_book_api</RootNamespace>
 	  <UserSecretsId>1c2d8e40-a4e2-4214-9655-92ad989005a5</UserSecretsId>
+	  <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	  <DockerfileContext>..\..</DockerfileContext>
+	  <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
 	<ItemGroup>
@@ -25,6 +28,7 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
 		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.9" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
 	</ItemGroup>
