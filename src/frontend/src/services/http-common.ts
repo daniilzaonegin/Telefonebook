@@ -1,16 +1,11 @@
-import { useContactsStore } from "@/store/contactsStore";
 import { useUserDataStore } from "@/store/usersStore";
 import axios, {
-  AxiosError,
-  AxiosInstance,
-  CreateAxiosDefaults,
-  RawAxiosRequestHeaders,
-  isAxiosError,
+  AxiosInstance
 } from "axios";
 import { useRouter } from "vue-router";
 
 const apiClient: AxiosInstance = axios.create({
-  baseURL: "https://localhost:7198",
+  baseURL: process.env.VUE_API_SERVER,
   headers: {
     "Content-Type": "application/json",
   },

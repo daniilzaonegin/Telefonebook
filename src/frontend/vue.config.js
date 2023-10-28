@@ -20,15 +20,15 @@ const keyFilePath = path.join(baseFolder, `${certificateName}.key`);
 const config = {
     devServer: {
         proxy: {
-            '^/weatherforecast': {
-                target: process.env.VUE_API_SERVER ?? 'https://localhost:7198/'
+            '^/api': {
+                target: process.env.VUE_API_SERVER
             }
         },
         port: 5002
     },
     configureWebpack: {
         devtool: "source-map"
-    }
+    },
 }
 
 if(fs.existsSync(certFilePath) && fs.existsSync(keyFilePath)) {    
