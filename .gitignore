@@ -475,3 +475,16 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+src/frontend/dist/favicon.ico
+src/frontend/dist/index.html
+src/frontend/dist/css/app.2c51d780.css
+src/frontend/dist/css/chunk-vendors.1a932262.css
+src/frontend/dist/fonts/primeicons.0112589c.ttf
+src/frontend/dist/fonts/primeicons.ba3f916d.woff2
+src/frontend/dist/fonts/primeicons.f8b9e8a4.woff
+src/frontend/dist/fonts/primeicons.ffecb254.eot
+src/frontend/dist/img/primeicons.943ab24c.svg
+src/frontend/dist/js/app.feae7981.js
+src/frontend/dist/js/app.feae7981.js.map
+src/frontend/dist/js/chunk-vendors.ed14a7ee.js
+src/frontend/dist/js/chunk-vendors.ed14a7ee.js.map

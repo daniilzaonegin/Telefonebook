@@ -5,7 +5,7 @@ import axios, {
 import { useRouter } from "vue-router";
 
 const apiClient: AxiosInstance = axios.create({
-  baseURL: process.env.VUE_API_SERVER,
+  baseURL: process.env.VUE_APP_API_SERVER,
   headers: {
     "Content-Type": "application/json",
   },

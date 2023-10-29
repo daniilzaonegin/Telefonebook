@@ -21,7 +21,7 @@ import { faAddressBook } from '@fortawesome/free-regular-svg-icons';
 library.add(faAddressBook);
 const pinia = createPinia();
 const app = createApp(App);
-app.config.globalProperties.apiBaseUrl = process.env.VUE_API_SERVER ?? 'VUE_API_SERVER'
+
 app.directive('tooltip', Tooltip);
 app.use(pinia);
 app.use(PrimeVue);
