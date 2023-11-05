@@ -23,7 +23,7 @@ jobs:
           [string]$projFile = Get-Content ./src/telefone-book-api/telefone-book-api.csproj
           $xDoc = [System.Xml.Linq.XDocument]::Parse($projFile)
           $version = $xDoc.Element("Project")?.Element("PropertyGroup")?.Element("AssemblyVersion")?.Value ?? "0.0.1"
-          $Env:ImageVersion = $version
+          echo "ImageVersion=$version" >> $env:GITHUB_ENV
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
