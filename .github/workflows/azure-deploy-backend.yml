@@ -37,4 +37,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: zaoneg/telephone-book-api:$ImageVersion
+          tags: zaoneg/telephone-book-api:${{ env.ImageVersion }}
