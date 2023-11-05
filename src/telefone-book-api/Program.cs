@@ -50,4 +50,11 @@ app.UseAuthorization();
 app.MapHealthChecks("/healthz");
 app.MapControllers().RequireAuthorization();
 
+//applying database migrations
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<TelephoneBookDbContext>();
+    await db.Database.MigrateAsync();
+}
+
 app.Run();
