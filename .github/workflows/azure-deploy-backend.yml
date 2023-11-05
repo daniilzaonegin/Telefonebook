@@ -16,7 +16,7 @@ jobs:
       - name: Perform a Pester test from the Tests.ps1 file
         shell: pwsh
         run: |
-          [string]$projFile = Get-Content .\telefone-book-api.csproj
+          [string]$projFile = Get-Content ./src/telefone-book-api/telefone-book-api.csproj
           $xDoc = [System.Xml.Linq.XDocument]::Parse($projFile)
           $version = $xDoc.Element("Project")?.Element("PropertyGroup")?.Element("AssemblyVersion")?.Value ?? "0.0.1"
           $Env:ImageVersion = $version
