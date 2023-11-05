@@ -13,6 +13,10 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+        with:
+         submodules: true
+         lfs: false
       - name: Perform a Pester test from the Tests.ps1 file
         shell: pwsh
         run: |
