@@ -6,7 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<RootNamespace>telefone_book_api</RootNamespace>
 		<UserSecretsId>1c2d8e40-a4e2-4214-9655-92ad989005a5</UserSecretsId>
-		<AssemblyVersion>1.0.1</AssemblyVersion>
+		<AssemblyVersion>1.0.2</AssemblyVersion>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 		<DockerfileContext>..\..</DockerfileContext>
 		<DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>

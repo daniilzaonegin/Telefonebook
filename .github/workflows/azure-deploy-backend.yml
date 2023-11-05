@@ -39,3 +39,16 @@ jobs:
           push: true
           file: src/telefone-book-api/Dockerfile
           tags: zaoneg/telephone-book-api:${{ env.ImageVersion }}
+
+      # - name: Log in to Azure
+      #   uses: azure/login@v1
+      #   with:
+      #     creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # - name: Build and deploy Container App
+      #   uses: azure/container-apps-deploy-action@v1
+      #   with:
+      #     imageToDeploy: zaoneg/telephone-book-api:${{ env.ImageVersion }}
+      #     registryUrl: zaoneg.dockerhub.io
+      #     registryUsername: ${{ secrets.DOCKERHUB_USERNAME }}
+      #     registryPassword: ${{ secrets.DOCKERHUB_TOKEN }}
