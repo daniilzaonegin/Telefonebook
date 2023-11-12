@@ -21,8 +21,20 @@ var serviceConfiguration = builder.Configuration;
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
+var connection = String.Empty;
+if (builder.Environment.IsDevelopment())
+{
+    builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Development.json").AddUserSecrets(Assembly.GetExecutingAssembly());
+    connection = builder.Configuration.GetConnectionString("TelephoneBookDbContext");
+}
+else
+{
+    connection = Environment.GetEnvironmentVariable("AZURE_SQL_CONNECTIONSTRING");
+}
+
+
 builder.Services.AddDbContext<TelephoneBookDbContext>(
-    opt => opt.UseSqlServer(serviceConfiguration.GetConnectionString(nameof(TelephoneBookDbContext))));
+    opt => opt.UseSqlServer(connection));
 
 builder.Services.AddHealthChecks();
 
