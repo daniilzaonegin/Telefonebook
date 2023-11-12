@@ -22,7 +22,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 builder.Services.AddDbContext<TelephoneBookDbContext>(
-    opt => opt.UseSqlite(serviceConfiguration.GetConnectionString(nameof(TelephoneBookDbContext))));
+    opt => opt.UseSqlServer(serviceConfiguration.GetConnectionString(nameof(TelephoneBookDbContext))));
 
 builder.Services.AddHealthChecks();
 
@@ -54,7 +54,7 @@ app.MapControllers().RequireAuthorization();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<TelephoneBookDbContext>();
-    await db.Database.MigrateAsync();
+     await db.Database.MigrateAsync();
 }
 
 app.Run();

@@ -18,7 +18,7 @@ public class TelephoneBookDbContext : IdentityDbContext<TelephoneBookUser>
     {
         if(!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseSqlite(@"Data Source=db/telephones.db;");
+            optionsBuilder.UseSqlServer(@"Data Source=LAPTOP-L0KR7172\SQLEXPRESS;Initial Catalog=TelephoneBook;Integrated Security=True");
         }
         base.OnConfiguring(optionsBuilder);
     }
