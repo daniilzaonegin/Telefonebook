@@ -8,8 +8,10 @@ This is a telephone book app, written on Vue.js & ASP.NET Core.
 It stores contact information. Every registered user has it own contacts.
 
 ## To run the Project:
+0. Configure Secret `ConnectionStrings:TelephoneBookDbContext` using `dotnet user-secrets`. 
+It should be MS SQL Connection string
 
-1. Open Solution `telefone-book.sln` in Visual Studio, run solution;
+1. Open Solution `telefone-book.sln` in Visual Studio, run solution; 
 
 Or
 
